@@ -597,7 +597,10 @@ class UserBasedRecommender(UserRecommender):
 
         '''
 
-        self._set_params(**params)
+        #self._set_params(**params)
+        n_similarity = params.pop('n_similarity', 'user_similarity')
+        distance = params.pop('distance', self.similarity.distance)
+        nhood_size = params.pop('nhood_size', None)
 
         candidate_items = self.all_other_items(user_id, **params)
 
