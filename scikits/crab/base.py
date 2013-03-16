@@ -8,7 +8,10 @@ Base Recommender Models.
 #          Bruno Melo <bruno@muricoca.com>
 # License: BSD Style.
 
-from scikits.sklearn.base import BaseEstimator
+try:
+    from scikits.learn.base import BaseEstimator
+except:
+    from sklearn.base import BaseEstimator
 
 
 class BaseRecommender(BaseEstimator):
